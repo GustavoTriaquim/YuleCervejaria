@@ -9,8 +9,8 @@ import portacopo from '../../Assets/Img/portacopo.jpg';
 import capinha from '../../Assets/Img/capinha.jpg';
 import Footer from "../../Components/Footer/Footer";
 import Texture from '../../Assets/Img/Texture/soft-plaster-texture.jpg';
-import SliderComponent from "./Components/SliderComponent/SliderComponent";
-import SliderImage from "./Components/SliderImage/SliderImage";
+import SliderComponent from "../../Components/SliderComponent/SliderComponent";
+import SliderImage from "../../Components/SliderImage/SliderImage";
 import ParagraphText from "./Components/ParagraphText/ParagraphText";
 import { useNavigate } from "react-router-dom";
 
