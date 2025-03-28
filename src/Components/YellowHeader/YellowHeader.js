@@ -6,6 +6,7 @@ const HeaderYellow = styled.div`
   background-color: #f3c037;
   border-bottom: 10px solid #3d3c3c;
   position: fixed;
+  z-index: 10000;
   top: 0;
 `;
 

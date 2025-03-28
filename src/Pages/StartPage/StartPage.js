@@ -1,13 +1,18 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "../../Components/Button/Button";
 import Header from "../../Components/Header/Header";
 import YellowHeader from "../../Components/YellowHeader/YellowHeader";
 import styled from "styled-components";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import carteira from '../../Assets/Img/carteira.jpg';
+import portacopo from '../../Assets/Img/portacopo.jpg';
+import capinha from '../../Assets/Img/capinha.jpg';
+import Footer from "../../Components/Footer/Footer";
+import Texture from '../../Assets/Img/Texture/soft-plaster-texture.jpg';
+import SliderComponent from "./Components/SliderComponent/SliderComponent";
+import SliderImage from "./Components/SliderImage/SliderImage";
+import ParagraphText from "./Components/ParagraphText/ParagraphText";
+import { useNavigate } from "react-router-dom";
 
 const Main = styled.main`
   width: 100%;
@@ -18,14 +23,16 @@ const Main = styled.main`
   align-items: center;
 `;
 
-const  Background = styled.div`
+const Background = styled.div`
   width: 100%;
-  background-color: #f8f5f3;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(${Texture});
+  background-size: cover;
+  background-position: center;
   padding: 20px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  jusitfy-content: center;
+  justify-content: center;
   gap: 30px;
 `;
 
@@ -70,33 +77,8 @@ const Paragraphs = styled.div`
   gap: 20px;
 `;
 
-const ParagraphIcon = styled.div`
-  display: flex;
-  gap: 10px;
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-  font-size: 20px;
-  color: #f3c037;
-`;
-
-const Paragraph = styled.p`
-  font-size: 22px;
-  cursor: default;
-`;
-
-const ImageBackground = styled.div`
-  background-color: #d9d9d9;
-`;
-
 function StartPage() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -113,44 +95,34 @@ function StartPage() {
           </Texts>
           <Content>
             <Paragraphs>
-              <ParagraphIcon>
-                <Icon icon={faLeaf}/>
-                <Paragraph>
-                  Na Cervejaria Yule, o bagaço de malte 
-                  descartado é reaproveitado para 
-                  produzir couro 100% vegano que é 
-                  utilizado em nossos brindes, como 
-                  porta-copos, carteiras, capinhas e 
-                  etc..
-                </Paragraph>
-              </ParagraphIcon>
-              <ParagraphIcon>
-                <Icon icon={faLightbulb} />
-                <Paragraph>
-                  Aqui nós acreditamos que inovação 
-                  e sustentabilidade podem andar juntas, 
-                  oferecendo produtos que refletem 
-                  nosso compromisso com o meio 
-                  ambiente e com a valorização 
-                  de materiais reaproveitados.
-                </Paragraph>
-              </ParagraphIcon>
-              <Button bType={'button'}>COMPRAR BRINDE</Button>
+              <ParagraphText
+                iconSVG={faLeaf}
+                text={'Na Cervejaria Yule, o bagaço de malte descartado é reaproveitado para produzir couro 100% vegano que é utilizado em nossos brindes, como porta-copos, carteiras, capinhas e etc..'}
+              />
+              <ParagraphText
+                iconSVG={faLightbulb}
+                text={'Aqui nós acreditamos que inovação e sustentabilidade podem andar juntas, oferecendo produtos que refletem nosso compromisso com o meio ambiente e com a valorização de materiais reaproveitados.'}
+              />
+              <Button bType={'button'} size={'18px'} click={() => navigate('/brindes')}>PEGAR BRINDE</Button>
             </Paragraphs>
-            <Slider {...settings}>
-              <ImageBackground>
-                <h3>1</h3>
-              </ImageBackground>
-              <ImageBackground>
-                <h3>2</h3>
-              </ImageBackground>
-              <ImageBackground>
-                <h3>3</h3>
-              </ImageBackground>
-            </Slider>
+            <SliderComponent>
+              <SliderImage
+                source={carteira}
+                altText={'carteira'}
+              />
+              <SliderImage
+                source={capinha}
+                altText={'capinha'}
+              />
+              <SliderImage
+                source={portacopo}
+                altText={'Porta Copo'}
+              />
+            </SliderComponent>
           </Content>
         </Background>
       </Main>
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ButtonStyle = styled.button`
-  width: 200px;
+  width: 300px;
   height: 50px;
   background-color: #f3c037;
   display: flex;
@@ -11,7 +11,8 @@ const ButtonStyle = styled.button`
   color: #000000;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
-  gap: 20px;
+  font-size: ${(props) => props.fontSize || '15px'};
+  gap: 10px;
   transition: 0.3s;
 
   &:hover {
@@ -20,9 +21,9 @@ const ButtonStyle = styled.button`
   }
 `;
 
-function Button({ bType, children }) {
+function Button({ bType, children, size, click }) {
   return (
-    <ButtonStyle type={bType}>
+    <ButtonStyle type={bType} fontSize={size} onClick={click}>
       {children}
     </ButtonStyle>
   );
