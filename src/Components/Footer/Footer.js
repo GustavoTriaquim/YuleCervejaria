@@ -3,6 +3,7 @@ import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import logo from '../../Assets/Img/image 1 (1).png';
+import SellerDiv from "./SellerDiv/SellerDiv";
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -65,32 +66,35 @@ const Payment = styled.div`
 
 function Footer() {
   return (
-    <FooterContainer>
-      <Slogan>
-        <Img src={logo} alt="Yule Brewery" />
-        <Text>Tradição em Cada Gole, Paixão em Cada Lote.</Text>
-      </Slogan>
-      <ContactDiv>
-        <Title>Contato</Title>
-        <Info>
-          <Icon icon={faLocationDot} />
-          <Text>R. Francisco Nunes, 1944 - Prado Velho, Curitiba - PR,</Text>
-        </Info>
-        <Info>
-          <Icon icon={faEnvelope} />
-          <Text>contato@cervejariayule.com.br</Text>
-        </Info>
-        <Payment>
-          <Text>Pagamentos: </Text>
+    <>
+      <SellerDiv />
+      <FooterContainer>
+        <Slogan>
+          <Img src={logo} alt="Yule Brewery" />
+          <Text>Tradição em Cada Gole, Paixão em Cada Lote.</Text>
+        </Slogan>
+        <ContactDiv>
+          <Title>Contato</Title>
           <Info>
-            <Icon icon={faCcVisa} />
-            <Icon icon={faCcPaypal} />
-            <Icon icon={faCcMastercard} />
-            <Icon icon={faCcApplePay} />
+            <Icon icon={faLocationDot} />
+            <Text>R. Francisco Nunes, 1944 - Prado Velho, Curitiba - PR,</Text>
           </Info>
-        </Payment>
-      </ContactDiv>
-    </FooterContainer>
+          <Info>
+            <Icon icon={faEnvelope} />
+            <Text>contato@cervejariayule.com.br</Text>
+          </Info>
+          <Payment>
+            <Text>Pagamentos: </Text>
+            <Info>
+              <Icon icon={faCcVisa} />
+              <Icon icon={faCcPaypal} />
+              <Icon icon={faCcMastercard} />
+              <Icon icon={faCcApplePay} />
+            </Info>
+          </Payment>
+        </ContactDiv>
+      </FooterContainer>
+    </>
   );
 }
 

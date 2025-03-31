@@ -103,7 +103,7 @@ function StartPage() {
                 iconSVG={faLightbulb}
                 text={'Aqui nós acreditamos que inovação e sustentabilidade podem andar juntas, oferecendo produtos que refletem nosso compromisso com o meio ambiente e com a valorização de materiais reaproveitados.'}
               />
-              <Button bType={'button'} size={'18px'} click={() => navigate('/brindes')}>PEGAR BRINDE</Button>
+              <Button bType={'button'} size={'18px'} click={() => navigate('/brindes')}>RESGATAR BRINDE</Button>
             </Paragraphs>
             <SliderComponent>
               <SliderImage

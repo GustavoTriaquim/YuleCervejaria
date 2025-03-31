@@ -35,6 +35,9 @@ function Header() {
         <Text>PRODUTOS - COURO VEGETAL 100% VEGANO</Text>
         <Button
           bType={'button'}
+          click={() => {
+            window.location.href = 'https://g.co/kgs/rJFXCje';
+          }}
         >
           <FontAwesomeIcon icon={faPhone} />
           ENTRAR EM CONTATO

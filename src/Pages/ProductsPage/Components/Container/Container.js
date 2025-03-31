@@ -62,7 +62,7 @@ function Container({ sliderSource1, sliderSource2, sliderSource3, sliderAlt, pNa
         <Name>{pName}</Name>
         <Price>{pPrice}</Price>
         <Seller>Vendido por: {pSeller}</Seller>
-        <Button bType={'button'}>PEGAR {pName}</Button>
+        <Button bType={'button'}>RESGATAR {pName}</Button>
       </Infos>
     </Background>
   );

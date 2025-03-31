@@ -24,9 +24,9 @@ function ProductsPage() {
       <Header />
       <Main>
         <Container
-          sliderSource1={carteira}
-          sliderSource2={carteira}
-          sliderSource3={carteira}
+          sliderSource1={portacopo}
+          sliderSource2={portacopo}
+          sliderSource3={portacopo}
           sliderAlt={'Carteira'}
           pName={'PRODUTO 1'}
           pPrice={'R$00,00'}
